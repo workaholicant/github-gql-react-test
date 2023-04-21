@@ -1,0 +1,1847 @@
+<header style="    -webkit-text-size-adjust: 100%;
+--Layout-pane-width: 220px;
+--Layout-content-width: 100%;
+--Layout-template-columns: 1fr var(--Layout-pane-width);
+--Layout-template-areas: 'content pane';
+--Layout-column-gap: 16px;
+--Layout-row-gap: 16px;
+--Layout-outer-spacing-x: 0px;
+--Layout-outer-spacing-y: 0px;
+--Layout-inner-spacing-min: 0px;
+--Layout-inner-spacing-max: 0px;
+--primer-actionListContent-paddingBlock: var(--primer-control-medium-paddingBlock,6px);
+--primer-duration-fast: 80ms;
+--primer-easing-easeInOut: cubic-bezier(0.65,0,0.35,1);
+--color-canvas-default-transparent: rgba(34,39,46,0);
+--color-page-header-bg: #22272e;
+--color-diff-blob-addition-num-text: #adbac7;
+--color-diff-blob-addition-fg: #adbac7;
+--color-diff-blob-addition-num-bg: rgba(87,171,90,0.3);
+--color-diff-blob-addition-line-bg: rgba(70,149,74,0.15);
+--color-diff-blob-addition-word-bg: rgba(70,149,74,0.4);
+--color-diff-blob-deletion-num-text: #adbac7;
+--color-diff-blob-deletion-fg: #adbac7;
+--color-diff-blob-deletion-num-bg: rgba(229,83,75,0.3);
+--color-diff-blob-deletion-line-bg: rgba(229,83,75,0.1);
+--color-diff-blob-deletion-word-bg: rgba(229,83,75,0.4);
+--color-diff-blob-hunk-num-bg: rgba(65,132,228,0.4);
+--color-diff-blob-expander-icon: #adbac7;
+--color-diffstat-deletion-border: rgba(205,217,229,0.1);
+--color-diffstat-addition-border: rgba(205,217,229,0.1);
+--color-diffstat-addition-bg: #57ab5a;
+--color-search-keyword-hl: rgba(198,144,38,0.4);
+--color-prettylights-syntax-comment: #768390;
+--color-prettylights-syntax-constant: #6cb6ff;
+--color-prettylights-syntax-entity: #dcbdfb;
+--color-prettylights-syntax-storage-modifier-import: #adbac7;
+--color-prettylights-syntax-entity-tag: #8ddb8c;
+--color-prettylights-syntax-keyword: #f47067;
+--color-prettylights-syntax-string: #96d0ff;
+--color-prettylights-syntax-variable: #f69d50;
+--color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
+--color-prettylights-syntax-invalid-illegal-text: #cdd9e5;
+--color-prettylights-syntax-invalid-illegal-bg: #922323;
+--color-prettylights-syntax-carriage-return-text: #cdd9e5;
+--color-prettylights-syntax-carriage-return-bg: #ad2e2c;
+--color-prettylights-syntax-string-regexp: #8ddb8c;
+--color-prettylights-syntax-markup-list: #eac55f;
+--color-prettylights-syntax-markup-heading: #316dca;
+--color-prettylights-syntax-markup-italic: #adbac7;
+--color-prettylights-syntax-markup-bold: #adbac7;
+--color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+--color-prettylights-syntax-markup-deleted-bg: #78191b;
+--color-prettylights-syntax-markup-inserted-text: #b4f1b4;
+--color-prettylights-syntax-markup-inserted-bg: #1b4721;
+--color-prettylights-syntax-markup-changed-text: #ffddb0;
+--color-prettylights-syntax-markup-changed-bg: #682d0f;
+--color-prettylights-syntax-markup-ignored-text: #adbac7;
+--color-prettylights-syntax-markup-ignored-bg: #255ab2;
+--color-prettylights-syntax-meta-diff-range: #dcbdfb;
+--color-prettylights-syntax-brackethighlighter-angle: #768390;
+--color-prettylights-syntax-sublimelinter-gutter-mark: #545d68;
+--color-prettylights-syntax-constant-other-reference-link: #96d0ff;
+--color-codemirror-text: #adbac7;
+--color-codemirror-bg: #22272e;
+--color-codemirror-gutters-bg: #22272e;
+--color-codemirror-guttermarker-text: #22272e;
+--color-codemirror-guttermarker-subtle-text: #636e7b;
+--color-codemirror-linenumber-text: #768390;
+--color-codemirror-cursor: #adbac7;
+--color-codemirror-selection-bg: rgba(65,132,228,0.4);
+--color-codemirror-activeline-bg: rgba(99,110,123,0.1);
+--color-codemirror-matchingbracket-text: #adbac7;
+--color-codemirror-lines-bg: #22272e;
+--color-codemirror-syntax-comment: #768390;
+--color-codemirror-syntax-constant: #6cb6ff;
+--color-codemirror-syntax-entity: #dcbdfb;
+--color-codemirror-syntax-keyword: #f47067;
+--color-codemirror-syntax-storage: #f47067;
+--color-codemirror-syntax-string: #96d0ff;
+--color-codemirror-syntax-support: #6cb6ff;
+--color-codemirror-syntax-variable: #f69d50;
+--color-checks-bg: #1c2128;
+--color-checks-run-border-width: 1px;
+--color-checks-container-border-width: 1px;
+--color-checks-text-primary: #adbac7;
+--color-checks-text-secondary: #768390;
+--color-checks-text-link: #539bf5;
+--color-checks-btn-icon: #768390;
+--color-checks-btn-hover-icon: #adbac7;
+--color-checks-btn-hover-bg: rgba(99,110,123,0.1);
+--color-checks-input-text: #768390;
+--color-checks-input-placeholder-text: #636e7b;
+--color-checks-input-focus-text: #adbac7;
+--color-checks-input-bg: #2d333b;
+--color-checks-input-shadow: 0 0 0 1px (obj) => (0, get_1.default)(obj, path);
+--color-checks-dropdown-text: #adbac7;
+--color-checks-dropdown-bg: #2d333b;
+--color-checks-dropdown-border: #444c56;
+--color-checks-dropdown-shadow: rgba(28,33,40,0.3);
+--color-checks-dropdown-hover-text: #adbac7;
+--color-checks-dropdown-hover-bg: rgba(99,110,123,0.1);
+--color-checks-dropdown-btn-hover-text: #adbac7;
+--color-checks-dropdown-btn-hover-bg: rgba(99,110,123,0.1);
+--color-checks-scrollbar-thumb-bg: rgba(99,110,123,0.4);
+--color-checks-header-label-text: #768390;
+--color-checks-header-label-open-text: #adbac7;
+--color-checks-header-border: #373e47;
+--color-checks-header-icon: #768390;
+--color-checks-line-text: #768390;
+--color-checks-line-num-text: #636e7b;
+--color-checks-line-timestamp-text: #636e7b;
+--color-checks-line-hover-bg: rgba(99,110,123,0.1);
+--color-checks-line-selected-bg: rgba(65,132,228,0.1);
+--color-checks-line-selected-num-text: #539bf5;
+--color-checks-line-dt-fm-text: #cdd9e5;
+--color-checks-line-dt-fm-bg: #966600;
+--color-checks-gate-bg: rgba(174,124,20,0.15);
+--color-checks-gate-text: #768390;
+--color-checks-gate-waiting-text: #c69026;
+--color-checks-step-header-open-bg: #2d333b;
+--color-checks-step-error-text: #e5534b;
+--color-checks-step-warning-text: #c69026;
+--color-checks-logline-text: #768390;
+--color-checks-logline-num-text: #636e7b;
+--color-checks-logline-debug-text: #986ee2;
+--color-checks-logline-error-text: #768390;
+--color-checks-logline-error-num-text: #636e7b;
+--color-checks-logline-error-bg: rgba(229,83,75,0.1);
+--color-checks-logline-warning-text: #768390;
+--color-checks-logline-warning-num-text: #c69026;
+--color-checks-logline-warning-bg: rgba(174,124,20,0.15);
+--color-checks-logline-command-text: #539bf5;
+--color-checks-logline-section-text: #57ab5a;
+--color-checks-ansi-black: #22272e;
+--color-checks-ansi-black-bright: #2d333b;
+--color-checks-ansi-white: #909dab;
+--color-checks-ansi-white-bright: #909dab;
+--color-checks-ansi-gray: #636e7b;
+--color-checks-ansi-red: #f47067;
+--color-checks-ansi-red-bright: #ff938a;
+--color-checks-ansi-green: #57ab5a;
+--color-checks-ansi-green-bright: #6bc46d;
+--color-checks-ansi-yellow: #c69026;
+--color-checks-ansi-yellow-bright: #daaa3f;
+--color-checks-ansi-blue: #539bf5;
+--color-checks-ansi-blue-bright: #6cb6ff;
+--color-checks-ansi-magenta: #b083f0;
+--color-checks-ansi-magenta-bright: #dcbdfb;
+--color-checks-ansi-cyan: #76e3ea;
+--color-checks-ansi-cyan-bright: #b3f0ff;
+--color-mktg-btn-bg: #f6f8fa;
+--color-mktg-btn-shadow-focus: rgb(255 255 255 / 25%) 0 0 0 4px;
+--color-mktg-btn-shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02), 0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028), 0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07);
+--color-mktg-btn-shadow-hover-muted: rgb(255 255 255) 0 0 0 2px inset;
+--color-control-border-color-emphasis: #606771;
+--color-avatar-bg: rgba(205,217,229,0.1);
+--color-avatar-border: rgba(205,217,229,0.1);
+--color-avatar-stack-fade: #444c56;
+--color-avatar-stack-fade-more: #373e47;
+--color-avatar-child-shadow: 0 0 0 2px #22272e;
+--color-topic-tag-border: rgba(0,0,0,0);
+--color-counter-border: rgba(0,0,0,0);
+--color-select-menu-backdrop-border: #545d68;
+--color-select-menu-tap-highlight: rgba(68,76,86,0.5);
+--color-select-menu-tap-focus-bg: #143d79;
+--color-overlay-shadow: 0 0 0 1px #444c56, 0 16px 32px rgba(28,33,40,0.85);
+--color-header-text: rgba(205,217,229,0.7);
+--color-header-bg: #2d333b;
+--color-header-divider: #768390;
+--color-header-logo: #cdd9e5;
+--color-header-search-bg: #22272e;
+--color-header-search-border: #444c56;
+--color-sidenav-selected-bg: #373e47;
+--color-menu-bg-active: #2d333b;
+--color-input-disabled-bg: rgba(99,110,123,0);
+--color-timeline-badge-bg: #373e47;
+--color-ansi-black: #545d68;
+--color-ansi-black-bright: #636e7b;
+--color-ansi-white: #909dab;
+--color-ansi-white-bright: #cdd9e5;
+--color-ansi-gray: #636e7b;
+--color-ansi-red: #f47067;
+--color-ansi-red-bright: #ff938a;
+--color-ansi-green: #57ab5a;
+--color-ansi-green-bright: #6bc46d;
+--color-ansi-yellow: #c69026;
+--color-ansi-yellow-bright: #daaa3f;
+--color-ansi-blue: #539bf5;
+--color-ansi-blue-bright: #6cb6ff;
+--color-ansi-magenta: #b083f0;
+--color-ansi-magenta-bright: #dcbdfb;
+--color-ansi-cyan: #39c5cf;
+--color-ansi-cyan-bright: #56d4dd;
+--color-btn-text: #adbac7;
+--color-btn-bg: #373e47;
+--color-btn-border: rgba(205,217,229,0.1);
+--color-btn-shadow: 0 0 transparent;
+--color-btn-inset-shadow: 0 0 transparent;
+--color-btn-hover-bg: #444c56;
+--color-btn-hover-border: #768390;
+--color-btn-active-bg: hsla(213,12%,27%,1);
+--color-btn-active-border: #636e7b;
+--color-btn-selected-bg: #2d333b;
+--color-btn-counter-bg: #444c56;
+--color-btn-primary-text: #ffffff;
+--color-btn-primary-bg: #347d39;
+--color-btn-primary-border: rgba(205,217,229,0.1);
+--color-btn-primary-shadow: 0 0 transparent;
+--color-btn-primary-inset-shadow: 0 0 transparent;
+--color-btn-primary-hover-bg: #46954a;
+--color-btn-primary-hover-border: rgba(205,217,229,0.1);
+--color-btn-primary-selected-bg: #347d39;
+--color-btn-primary-selected-shadow: 0 0 transparent;
+--color-btn-primary-disabled-text: rgba(205,217,229,0.5);
+--color-btn-primary-disabled-bg: rgba(52,125,57,0.6);
+--color-btn-primary-disabled-border: rgba(205,217,229,0.1);
+--color-btn-primary-icon: #cdd9e5;
+--color-btn-primary-counter-bg: rgba(205,217,229,0.2);
+--color-btn-outline-text: #539bf5;
+--color-btn-outline-hover-text: #539bf5;
+--color-btn-outline-hover-bg: #444c56;
+--color-btn-outline-hover-border: rgba(205,217,229,0.1);
+--color-btn-outline-hover-shadow: 0 1px 0 rgba(28,33,40,0.1);
+--color-btn-outline-hover-inset-shadow: inset 0 1px 0 rgba(205,217,229,0.03);
+--color-btn-outline-hover-counter-bg: rgba(205,217,229,0.2);
+--color-btn-outline-selected-text: #cdd9e5;
+--color-btn-outline-selected-bg: #1b4b91;
+--color-btn-outline-selected-border: rgba(205,217,229,0.1);
+--color-btn-outline-selected-shadow: 0 0 transparent;
+--color-btn-outline-disabled-text: rgba(83,155,245,0.5);
+--color-btn-outline-disabled-bg: #22272e;
+--color-btn-outline-disabled-counter-bg: rgba(49,109,202,0.05);
+--color-btn-outline-counter-bg: rgba(49,109,202,0.1);
+--color-btn-danger-text: #e5534b;
+--color-btn-danger-hover-text: #cdd9e5;
+--color-btn-danger-hover-bg: #c93c37;
+--color-btn-danger-hover-border: #e5534b;
+--color-btn-danger-hover-shadow: 0 0 transparent;
+--color-btn-danger-hover-inset-shadow: 0 0 transparent;
+--color-btn-danger-hover-icon: #cdd9e5;
+--color-btn-danger-hover-counter-bg: rgba(255,255,255,0.2);
+--color-btn-danger-selected-text: #ffffff;
+--color-btn-danger-selected-bg: #ad2e2c;
+--color-btn-danger-selected-border: #f47067;
+--color-btn-danger-selected-shadow: 0 0 transparent;
+--color-btn-danger-disabled-text: rgba(229,83,75,0.5);
+--color-btn-danger-disabled-bg: #22272e;
+--color-btn-danger-disabled-counter-bg: rgba(201,60,55,0.05);
+--color-btn-danger-counter-bg: rgba(201,60,55,0.1);
+--color-btn-danger-icon: #e5534b;
+--color-underlinenav-icon: #636e7b;
+--color-underlinenav-border-hover: rgba(99,110,123,0.4);
+--color-action-list-item-inline-divider: rgba(68,76,86,0.48);
+--color-action-list-item-default-hover-bg: rgba(144,157,171,0.12);
+--color-action-list-item-default-hover-border: rgba(0,0,0,0);
+--color-action-list-item-default-active-bg: rgba(144,157,171,0.2);
+--color-action-list-item-default-active-border: rgba(0,0,0,0);
+--color-action-list-item-default-selected-bg: rgba(144,157,171,0.08);
+--color-action-list-item-danger-hover-bg: rgba(229,83,75,0.16);
+--color-action-list-item-danger-active-bg: rgba(229,83,75,0.24);
+--color-action-list-item-danger-hover-text: #f47067;
+--color-switch-track-bg: rgba(99,110,123,0.1);
+--color-switch-track-hover-bg: hsla(213,11%,69%,0.1);
+--color-switch-track-active-bg: rgba(99,110,123,0.4);
+--color-switch-track-disabled-bg: #373e47;
+--color-switch-track-fg: #768390;
+--color-switch-track-disabled-fg: #1c2128;
+--color-switch-track-border: rgba(0,0,0,0);
+--color-switch-track-checked-bg: rgba(49,109,202,0.35);
+--color-switch-track-checked-hover-bg: rgba(49,109,202,0.5);
+--color-switch-track-checked-active-bg: rgba(49,109,202,0.65);
+--color-switch-track-checked-fg: #cdd9e5;
+--color-switch-track-checked-disabled-fg: #1c2128;
+--color-switch-track-checked-border: rgba(0,0,0,0);
+--color-switch-knob-bg: #22272e;
+--color-switch-knob-border: #606771;
+--color-switch-knob-disabled-bg: #2d333b;
+--color-switch-knob-checked-bg: #22272e;
+--color-switch-knob-checked-disabled-bg: #2d333b;
+--color-switch-knob-checked-border: rgba(49,109,202,0.35);
+--color-segmented-control-bg: rgba(99,110,123,0.1);
+--color-segmented-control-button-bg: #22272e;
+--color-segmented-control-button-hover-bg: #444c56;
+--color-segmented-control-button-active-bg: #373e47;
+--color-segmented-control-button-selected-border: #636e7b;
+--color-tree-view-item-chevron-hover-bg: rgba(144,157,171,0.12);
+--color-tree-view-item-directory-fill: #768390;
+--color-fg-default: #adbac7;
+--color-fg-muted: #768390;
+--color-fg-subtle: #636e7b;
+--color-fg-on-emphasis: #cdd9e5;
+--color-canvas-default: #22272e;
+--color-canvas-overlay: #2d333b;
+--color-canvas-inset: #1c2128;
+--color-canvas-subtle: #2d333b;
+--color-border-default: #444c56;
+--color-border-muted: #373e47;
+--color-border-subtle: rgba(205,217,229,0.1);
+--color-shadow-small: 0 0 transparent;
+--color-shadow-medium: 0 3px 6px #1c2128;
+--color-shadow-large: 0 8px 24px #1c2128;
+--color-shadow-extra-large: 0 12px 48px #1c2128;
+--color-neutral-emphasis-plus: #636e7b;
+--color-neutral-emphasis: #636e7b;
+--color-neutral-muted: rgba(99,110,123,0.4);
+--color-neutral-subtle: rgba(99,110,123,0.1);
+--color-accent-fg: #539bf5;
+--color-accent-emphasis: #316dca;
+--color-accent-muted: rgba(65,132,228,0.4);
+--color-accent-subtle: rgba(65,132,228,0.1);
+--color-success-fg: #57ab5a;
+--color-success-emphasis: #347d39;
+--color-success-muted: rgba(70,149,74,0.4);
+--color-success-subtle: rgba(70,149,74,0.15);
+--color-attention-fg: #c69026;
+--color-attention-emphasis: #966600;
+--color-attention-muted: rgba(174,124,20,0.4);
+--color-attention-subtle: rgba(174,124,20,0.15);
+--color-severe-fg: #cc6b2c;
+--color-severe-emphasis: #ae5622;
+--color-severe-muted: rgba(204,107,44,0.4);
+--color-severe-subtle: rgba(204,107,44,0.1);
+--color-danger-fg: #e5534b;
+--color-danger-emphasis: #c93c37;
+--color-danger-muted: rgba(229,83,75,0.4);
+--color-danger-subtle: rgba(229,83,75,0.1);
+--color-open-fg: #57ab5a;
+--color-open-emphasis: #347d39;
+--color-open-muted: rgba(70,149,74,0.4);
+--color-open-subtle: rgba(70,149,74,0.15);
+--color-closed-fg: #e5534b;
+--color-closed-emphasis: #c93c37;
+--color-closed-muted: rgba(229,83,75,0.4);
+--color-closed-subtle: rgba(229,83,75,0.15);
+--color-done-fg: #986ee2;
+--color-done-emphasis: #8256d0;
+--color-done-muted: rgba(152,110,226,0.4);
+--color-done-subtle: rgba(152,110,226,0.1);
+--color-sponsors-fg: #c96198;
+--color-sponsors-emphasis: #ae4c82;
+--color-sponsors-muted: rgba(201,97,152,0.4);
+--color-sponsors-subtle: rgba(201,97,152,0.1);
+--color-primer-fg-disabled: #545d68;
+--color-primer-canvas-backdrop: rgba(28,33,40,0.8);
+--color-primer-canvas-sticky: rgba(34,39,46,0.95);
+--color-primer-border-active: #ec775c;
+--color-primer-border-contrast: rgba(205,217,229,0.2);
+--color-primer-shadow-highlight: 0 0 transparent;
+--color-primer-shadow-inset: 0 0 transparent;
+--color-scale-black: #1c2128;
+--color-scale-white: #cdd9e5;
+--color-scale-gray-0: #cdd9e5;
+--color-scale-gray-1: #adbac7;
+--color-scale-gray-2: #909dab;
+--color-scale-gray-3: #768390;
+--color-scale-gray-4: #636e7b;
+--color-scale-gray-5: #545d68;
+--color-scale-gray-6: #444c56;
+--color-scale-gray-7: #373e47;
+--color-scale-gray-8: #2d333b;
+--color-scale-gray-9: #22272e;
+--color-scale-blue-0: #c6e6ff;
+--color-scale-blue-1: #96d0ff;
+--color-scale-blue-2: #6cb6ff;
+--color-scale-blue-3: #539bf5;
+--color-scale-blue-4: #4184e4;
+--color-scale-blue-5: #316dca;
+--color-scale-blue-6: #255ab2;
+--color-scale-blue-7: #1b4b91;
+--color-scale-blue-8: #143d79;
+--color-scale-blue-9: #0f2d5c;
+--color-scale-green-0: #b4f1b4;
+--color-scale-green-1: #8ddb8c;
+--color-scale-green-2: #6bc46d;
+--color-scale-green-3: #57ab5a;
+--color-scale-green-4: #46954a;
+--color-scale-green-5: #347d39;
+--color-scale-green-6: #2b6a30;
+--color-scale-green-7: #245829;
+--color-scale-green-8: #1b4721;
+--color-scale-green-9: #113417;
+--color-scale-yellow-0: #fbe090;
+--color-scale-yellow-1: #eac55f;
+--color-scale-yellow-2: #daaa3f;
+--color-scale-yellow-3: #c69026;
+--color-scale-yellow-4: #ae7c14;
+--color-scale-yellow-5: #966600;
+--color-scale-yellow-6: #805400;
+--color-scale-yellow-7: #6c4400;
+--color-scale-yellow-8: #593600;
+--color-scale-yellow-9: #452700;
+--color-scale-orange-0: #ffddb0;
+--color-scale-orange-1: #ffbc6f;
+--color-scale-orange-2: #f69d50;
+--color-scale-orange-3: #e0823d;
+--color-scale-orange-4: #cc6b2c;
+--color-scale-orange-5: #ae5622;
+--color-scale-orange-6: #94471b;
+--color-scale-orange-7: #7f3913;
+--color-scale-orange-8: #682d0f;
+--color-scale-orange-9: #4d210c;
+--color-scale-red-0: #ffd8d3;
+--color-scale-red-1: #ffb8b0;
+--color-scale-red-2: #ff938a;
+--color-scale-red-3: #f47067;
+--color-scale-red-4: #e5534b;
+--color-scale-red-5: #c93c37;
+--color-scale-red-6: #ad2e2c;
+--color-scale-red-7: #922323;
+--color-scale-red-8: #78191b;
+--color-scale-red-9: #5d0f12;
+--color-scale-purple-0: #eedcff;
+--color-scale-purple-1: #dcbdfb;
+--color-scale-purple-2: #dcbdfb;
+--color-scale-purple-3: #b083f0;
+--color-scale-purple-4: #986ee2;
+--color-scale-purple-5: #8256d0;
+--color-scale-purple-6: #6b44bc;
+--color-scale-purple-7: #5936a2;
+--color-scale-purple-8: #472c82;
+--color-scale-purple-9: #352160;
+--color-scale-pink-0: #ffd7eb;
+--color-scale-pink-1: #ffb3d8;
+--color-scale-pink-2: #fc8dc7;
+--color-scale-pink-3: #e275ad;
+--color-scale-pink-4: #c96198;
+--color-scale-pink-5: #ae4c82;
+--color-scale-pink-6: #983b6e;
+--color-scale-pink-7: #7e325a;
+--color-scale-pink-8: #69264a;
+--color-scale-pink-9: #551639;
+--color-scale-coral-0: #ffdacf;
+--color-scale-coral-1: #ffb9a5;
+--color-scale-coral-2: #f79981;
+--color-scale-coral-3: #ec775c;
+--color-scale-coral-4: #de5b41;
+--color-scale-coral-5: #c2442d;
+--color-scale-coral-6: #a93524;
+--color-scale-coral-7: #8d291b;
+--color-scale-coral-8: #771d13;
+--color-scale-coral-9: #5d1008;
+color-scheme: dark;
+--color-social-reaction-bg-hover: var(--color-scale-gray-7);
+--color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+--color-workflow-card-connector: var(--color-scale-gray-5);
+--color-workflow-card-connector-bg: var(--color-scale-gray-5);
+--color-workflow-card-connector-inactive: var(--color-border-default);
+--color-workflow-card-connector-inactive-bg: var(--color-border-default);
+--color-workflow-card-connector-highlight: var(--color-scale-blue-5);
+--color-workflow-card-connector-highlight-bg: var(--color-scale-blue-5);
+--color-workflow-card-bg: var(--color-scale-gray-7);
+--color-workflow-card-inactive-bg: var(--color-canvas-inset);
+--color-workflow-card-header-shadow: rgba(27, 31, 35, 0.04);
+--color-workflow-card-progress-complete-bg: var(--color-scale-blue-5);
+--color-workflow-card-progress-incomplete-bg: var(--color-scale-gray-6);
+--color-discussions-state-answered-icon: var(--color-scale-green-3);
+--color-bg-discussions-row-emoji-box: var(--color-scale-gray-6);
+--color-notifications-button-text: var(--color-scale-white);
+--color-notifications-button-hover-text: var(--color-scale-white);
+--color-notifications-button-hover-bg: var(--color-scale-blue-4);
+--color-notifications-row-read-bg: var(--color-canvas-default);
+--color-notifications-row-bg: var(--color-canvas-subtle);
+--color-icon-directory: var(--color-fg-muted);
+--color-checks-step-error-icon: var(--color-scale-red-4);
+--color-calendar-halloween-graph-day-L1-bg: #631c03;
+--color-calendar-halloween-graph-day-L2-bg: #bd561d;
+--color-calendar-halloween-graph-day-L3-bg: #fa7a18;
+--color-calendar-halloween-graph-day-L4-bg: #fddf68;
+--color-calendar-winter-graph-day-L1-bg: #0A3069;
+--color-calendar-winter-graph-day-L2-bg: #0969DA;
+--color-calendar-winter-graph-day-L3-bg: #54AEFF;
+--color-calendar-winter-graph-day-L4-bg: #B6E3FF;
+--color-calendar-graph-day-bg: var(--color-scale-gray-8);
+--color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+--color-calendar-graph-day-L1-bg: #0e4429;
+--color-calendar-graph-day-L2-bg: #006d32;
+--color-calendar-graph-day-L3-bg: #26a641;
+--color-calendar-graph-day-L4-bg: #39d353;
+--color-calendar-graph-day-L1-border: rgba(255, 255, 255, 0.05);
+--color-calendar-graph-day-L2-border: rgba(255, 255, 255, 0.05);
+--color-calendar-graph-day-L3-border: rgba(255, 255, 255, 0.05);
+--color-calendar-graph-day-L4-border: rgba(255, 255, 255, 0.05);
+--color-user-mention-fg: var(--color-scale-yellow-0);
+--color-user-mention-bg: var(--color-scale-yellow-8);
+--color-dashboard-feed-bg: var(--color-scale-gray-9);
+--color-mktg-btn-shadow-outline: rgba(255, 255, 255, 0.25) 0 0 0 1px inset;
+--color-marketing-icon-primary: var(--color-scale-blue-2);
+--color-marketing-icon-secondary: var(--color-scale-blue-5);
+--color-project-header-bg: var(--color-scale-gray-9);
+--color-project-sidebar-bg: var(--color-scale-gray-8);
+--color-project-gradient-in: var(--color-scale-gray-8);
+--color-project-gradient-out: rgba(22, 27, 34, 0);
+--color-diff-blob-selected-line-highlight-mix-blend-mode: screen;
+--color-checks-donut-error: var(--color-scale-red-4);
+--color-checks-donut-pending: var(--color-scale-yellow-3);
+--color-checks-donut-success: var(--color-scale-green-4);
+--color-checks-donut-neutral: var(--color-scale-gray-3);
+--color-text-white: var(--color-scale-white);
+font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji';
+word-wrap: break-word;
+box-sizing: border-box;
+flex-wrap: nowrap !important;
+padding-right: var(--base-size-32, 32px) !important;
+padding-left: var(--base-size-32, 32px) !important;
+z-index: 32;
+display: flex;
+padding: 16px;
+font-size: 14px;
+line-height: 1.5;
+color: var(--color-header-text);
+background-color: var(--color-header-bg);
+align-items: center;" role="banner">
+
+  <div style="-webkit-text-size-adjust: 100%;
+  --Layout-pane-width: 220px;
+  --Layout-content-width: 100%;
+  --Layout-template-columns: 1fr var(--Layout-pane-width);
+  --Layout-template-areas: 'content pane';
+  --Layout-column-gap: 16px;
+  --Layout-row-gap: 16px;
+  --Layout-outer-spacing-x: 0px;
+  --Layout-outer-spacing-y: 0px;
+  --Layout-inner-spacing-min: 0px;
+  --Layout-inner-spacing-max: 0px;
+  --primer-actionListContent-paddingBlock: var(--primer-control-medium-paddingBlock,6px);
+  --primer-duration-fast: 80ms;
+  --primer-easing-easeInOut: cubic-bezier(0.65,0,0.35,1);
+  --color-canvas-default-transparent: rgba(34,39,46,0);
+  --color-page-header-bg: #22272e;
+  --color-diff-blob-addition-num-text: #adbac7;
+  --color-diff-blob-addition-fg: #adbac7;
+  --color-diff-blob-addition-num-bg: rgba(87,171,90,0.3);
+  --color-diff-blob-addition-line-bg: rgba(70,149,74,0.15);
+  --color-diff-blob-addition-word-bg: rgba(70,149,74,0.4);
+  --color-diff-blob-deletion-num-text: #adbac7;
+  --color-diff-blob-deletion-fg: #adbac7;
+  --color-diff-blob-deletion-num-bg: rgba(229,83,75,0.3);
+  --color-diff-blob-deletion-line-bg: rgba(229,83,75,0.1);
+  --color-diff-blob-deletion-word-bg: rgba(229,83,75,0.4);
+  --color-diff-blob-hunk-num-bg: rgba(65,132,228,0.4);
+  --color-diff-blob-expander-icon: #adbac7;
+  --color-diffstat-deletion-border: rgba(205,217,229,0.1);
+  --color-diffstat-addition-border: rgba(205,217,229,0.1);
+  --color-diffstat-addition-bg: #57ab5a;
+  --color-search-keyword-hl: rgba(198,144,38,0.4);
+  --color-prettylights-syntax-comment: #768390;
+  --color-prettylights-syntax-constant: #6cb6ff;
+  --color-prettylights-syntax-entity: #dcbdfb;
+  --color-prettylights-syntax-storage-modifier-import: #adbac7;
+  --color-prettylights-syntax-entity-tag: #8ddb8c;
+  --color-prettylights-syntax-keyword: #f47067;
+  --color-prettylights-syntax-string: #96d0ff;
+  --color-prettylights-syntax-variable: #f69d50;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
+  --color-prettylights-syntax-invalid-illegal-text: #cdd9e5;
+  --color-prettylights-syntax-invalid-illegal-bg: #922323;
+  --color-prettylights-syntax-carriage-return-text: #cdd9e5;
+  --color-prettylights-syntax-carriage-return-bg: #ad2e2c;
+  --color-prettylights-syntax-string-regexp: #8ddb8c;
+  --color-prettylights-syntax-markup-list: #eac55f;
+  --color-prettylights-syntax-markup-heading: #316dca;
+  --color-prettylights-syntax-markup-italic: #adbac7;
+  --color-prettylights-syntax-markup-bold: #adbac7;
+  --color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+  --color-prettylights-syntax-markup-deleted-bg: #78191b;
+  --color-prettylights-syntax-markup-inserted-text: #b4f1b4;
+  --color-prettylights-syntax-markup-inserted-bg: #1b4721;
+  --color-prettylights-syntax-markup-changed-text: #ffddb0;
+  --color-prettylights-syntax-markup-changed-bg: #682d0f;
+  --color-prettylights-syntax-markup-ignored-text: #adbac7;
+  --color-prettylights-syntax-markup-ignored-bg: #255ab2;
+  --color-prettylights-syntax-meta-diff-range: #dcbdfb;
+  --color-prettylights-syntax-brackethighlighter-angle: #768390;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #545d68;
+  --color-prettylights-syntax-constant-other-reference-link: #96d0ff;
+  --color-codemirror-text: #adbac7;
+  --color-codemirror-bg: #22272e;
+  --color-codemirror-gutters-bg: #22272e;
+  --color-codemirror-guttermarker-text: #22272e;
+  --color-codemirror-guttermarker-subtle-text: #636e7b;
+  --color-codemirror-linenumber-text: #768390;
+  --color-codemirror-cursor: #adbac7;
+  --color-codemirror-selection-bg: rgba(65,132,228,0.4);
+  --color-codemirror-activeline-bg: rgba(99,110,123,0.1);
+  --color-codemirror-matchingbracket-text: #adbac7;
+  --color-codemirror-lines-bg: #22272e;
+  --color-codemirror-syntax-comment: #768390;
+  --color-codemirror-syntax-constant: #6cb6ff;
+  --color-codemirror-syntax-entity: #dcbdfb;
+  --color-codemirror-syntax-keyword: #f47067;
+  --color-codemirror-syntax-storage: #f47067;
+  --color-codemirror-syntax-string: #96d0ff;
+  --color-codemirror-syntax-support: #6cb6ff;
+  --color-codemirror-syntax-variable: #f69d50;
+  --color-checks-bg: #1c2128;
+  --color-checks-run-border-width: 1px;
+  --color-checks-container-border-width: 1px;
+  --color-checks-text-primary: #adbac7;
+  --color-checks-text-secondary: #768390;
+  --color-checks-text-link: #539bf5;
+  --color-checks-btn-icon: #768390;
+  --color-checks-btn-hover-icon: #adbac7;
+  --color-checks-btn-hover-bg: rgba(99,110,123,0.1);
+  --color-checks-input-text: #768390;
+  --color-checks-input-placeholder-text: #636e7b;
+  --color-checks-input-focus-text: #adbac7;
+  --color-checks-input-bg: #2d333b;
+  --color-checks-input-shadow: 0 0 0 1px (obj) => (0, get_1.default)(obj, path);
+  --color-checks-dropdown-text: #adbac7;
+  --color-checks-dropdown-bg: #2d333b;
+  --color-checks-dropdown-border: #444c56;
+  --color-checks-dropdown-shadow: rgba(28,33,40,0.3);
+  --color-checks-dropdown-hover-text: #adbac7;
+  --color-checks-dropdown-hover-bg: rgba(99,110,123,0.1);
+  --color-checks-dropdown-btn-hover-text: #adbac7;
+  --color-checks-dropdown-btn-hover-bg: rgba(99,110,123,0.1);
+  --color-checks-scrollbar-thumb-bg: rgba(99,110,123,0.4);
+  --color-checks-header-label-text: #768390;
+  --color-checks-header-label-open-text: #adbac7;
+  --color-checks-header-border: #373e47;
+  --color-checks-header-icon: #768390;
+  --color-checks-line-text: #768390;
+  --color-checks-line-num-text: #636e7b;
+  --color-checks-line-timestamp-text: #636e7b;
+  --color-checks-line-hover-bg: rgba(99,110,123,0.1);
+  --color-checks-line-selected-bg: rgba(65,132,228,0.1);
+  --color-checks-line-selected-num-text: #539bf5;
+  --color-checks-line-dt-fm-text: #cdd9e5;
+  --color-checks-line-dt-fm-bg: #966600;
+  --color-checks-gate-bg: rgba(174,124,20,0.15);
+  --color-checks-gate-text: #768390;
+  --color-checks-gate-waiting-text: #c69026;
+  --color-checks-step-header-open-bg: #2d333b;
+  --color-checks-step-error-text: #e5534b;
+  --color-checks-step-warning-text: #c69026;
+  --color-checks-logline-text: #768390;
+  --color-checks-logline-num-text: #636e7b;
+  --color-checks-logline-debug-text: #986ee2;
+  --color-checks-logline-error-text: #768390;
+  --color-checks-logline-error-num-text: #636e7b;
+  --color-checks-logline-error-bg: rgba(229,83,75,0.1);
+  --color-checks-logline-warning-text: #768390;
+  --color-checks-logline-warning-num-text: #c69026;
+  --color-checks-logline-warning-bg: rgba(174,124,20,0.15);
+  --color-checks-logline-command-text: #539bf5;
+  --color-checks-logline-section-text: #57ab5a;
+  --color-checks-ansi-black: #22272e;
+  --color-checks-ansi-black-bright: #2d333b;
+  --color-checks-ansi-white: #909dab;
+  --color-checks-ansi-white-bright: #909dab;
+  --color-checks-ansi-gray: #636e7b;
+  --color-checks-ansi-red: #f47067;
+  --color-checks-ansi-red-bright: #ff938a;
+  --color-checks-ansi-green: #57ab5a;
+  --color-checks-ansi-green-bright: #6bc46d;
+  --color-checks-ansi-yellow: #c69026;
+  --color-checks-ansi-yellow-bright: #daaa3f;
+  --color-checks-ansi-blue: #539bf5;
+  --color-checks-ansi-blue-bright: #6cb6ff;
+  --color-checks-ansi-magenta: #b083f0;
+  --color-checks-ansi-magenta-bright: #dcbdfb;
+  --color-checks-ansi-cyan: #76e3ea;
+  --color-checks-ansi-cyan-bright: #b3f0ff;
+  --color-mktg-btn-bg: #f6f8fa;
+  --color-mktg-btn-shadow-focus: rgb(255 255 255 / 25%) 0 0 0 4px;
+  --color-mktg-btn-shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02), 0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028), 0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07);
+  --color-mktg-btn-shadow-hover-muted: rgb(255 255 255) 0 0 0 2px inset;
+  --color-control-border-color-emphasis: #606771;
+  --color-avatar-bg: rgba(205,217,229,0.1);
+  --color-avatar-border: rgba(205,217,229,0.1);
+  --color-avatar-stack-fade: #444c56;
+  --color-avatar-stack-fade-more: #373e47;
+  --color-avatar-child-shadow: 0 0 0 2px #22272e;
+  --color-topic-tag-border: rgba(0,0,0,0);
+  --color-counter-border: rgba(0,0,0,0);
+  --color-select-menu-backdrop-border: #545d68;
+  --color-select-menu-tap-highlight: rgba(68,76,86,0.5);
+  --color-select-menu-tap-focus-bg: #143d79;
+  --color-overlay-shadow: 0 0 0 1px #444c56, 0 16px 32px rgba(28,33,40,0.85);
+  --color-header-text: rgba(205,217,229,0.7);
+  --color-header-bg: #2d333b;
+  --color-header-divider: #768390;
+  --color-header-logo: #cdd9e5;
+  --color-header-search-bg: #22272e;
+  --color-header-search-border: #444c56;
+  --color-sidenav-selected-bg: #373e47;
+  --color-menu-bg-active: #2d333b;
+  --color-input-disabled-bg: rgba(99,110,123,0);
+  --color-timeline-badge-bg: #373e47;
+  --color-ansi-black: #545d68;
+  --color-ansi-black-bright: #636e7b;
+  --color-ansi-white: #909dab;
+  --color-ansi-white-bright: #cdd9e5;
+  --color-ansi-gray: #636e7b;
+  --color-ansi-red: #f47067;
+  --color-ansi-red-bright: #ff938a;
+  --color-ansi-green: #57ab5a;
+  --color-ansi-green-bright: #6bc46d;
+  --color-ansi-yellow: #c69026;
+  --color-ansi-yellow-bright: #daaa3f;
+  --color-ansi-blue: #539bf5;
+  --color-ansi-blue-bright: #6cb6ff;
+  --color-ansi-magenta: #b083f0;
+  --color-ansi-magenta-bright: #dcbdfb;
+  --color-ansi-cyan: #39c5cf;
+  --color-ansi-cyan-bright: #56d4dd;
+  --color-btn-text: #adbac7;
+  --color-btn-bg: #373e47;
+  --color-btn-border: rgba(205,217,229,0.1);
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: #444c56;
+  --color-btn-hover-border: #768390;
+  --color-btn-active-bg: hsla(213,12%,27%,1);
+  --color-btn-active-border: #636e7b;
+  --color-btn-selected-bg: #2d333b;
+  --color-btn-counter-bg: #444c56;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #347d39;
+  --color-btn-primary-border: rgba(205,217,229,0.1);
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #46954a;
+  --color-btn-primary-hover-border: rgba(205,217,229,0.1);
+  --color-btn-primary-selected-bg: #347d39;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: rgba(205,217,229,0.5);
+  --color-btn-primary-disabled-bg: rgba(52,125,57,0.6);
+  --color-btn-primary-disabled-border: rgba(205,217,229,0.1);
+  --color-btn-primary-icon: #cdd9e5;
+  --color-btn-primary-counter-bg: rgba(205,217,229,0.2);
+  --color-btn-outline-text: #539bf5;
+  --color-btn-outline-hover-text: #539bf5;
+  --color-btn-outline-hover-bg: #444c56;
+  --color-btn-outline-hover-border: rgba(205,217,229,0.1);
+  --color-btn-outline-hover-shadow: 0 1px 0 rgba(28,33,40,0.1);
+  --color-btn-outline-hover-inset-shadow: inset 0 1px 0 rgba(205,217,229,0.03);
+  --color-btn-outline-hover-counter-bg: rgba(205,217,229,0.2);
+  --color-btn-outline-selected-text: #cdd9e5;
+  --color-btn-outline-selected-bg: #1b4b91;
+  --color-btn-outline-selected-border: rgba(205,217,229,0.1);
+  --color-btn-outline-selected-shadow: 0 0 transparent;
+  --color-btn-outline-disabled-text: rgba(83,155,245,0.5);
+  --color-btn-outline-disabled-bg: #22272e;
+  --color-btn-outline-disabled-counter-bg: rgba(49,109,202,0.05);
+  --color-btn-outline-counter-bg: rgba(49,109,202,0.1);
+  --color-btn-danger-text: #e5534b;
+  --color-btn-danger-hover-text: #cdd9e5;
+  --color-btn-danger-hover-bg: #c93c37;
+  --color-btn-danger-hover-border: #e5534b;
+  --color-btn-danger-hover-shadow: 0 0 transparent;
+  --color-btn-danger-hover-inset-shadow: 0 0 transparent;
+  --color-btn-danger-hover-icon: #cdd9e5;
+  --color-btn-danger-hover-counter-bg: rgba(255,255,255,0.2);
+  --color-btn-danger-selected-text: #ffffff;
+  --color-btn-danger-selected-bg: #ad2e2c;
+  --color-btn-danger-selected-border: #f47067;
+  --color-btn-danger-selected-shadow: 0 0 transparent;
+  --color-btn-danger-disabled-text: rgba(229,83,75,0.5);
+  --color-btn-danger-disabled-bg: #22272e;
+  --color-btn-danger-disabled-counter-bg: rgba(201,60,55,0.05);
+  --color-btn-danger-counter-bg: rgba(201,60,55,0.1);
+  --color-btn-danger-icon: #e5534b;
+  --color-underlinenav-icon: #636e7b;
+  --color-underlinenav-border-hover: rgba(99,110,123,0.4);
+  --color-action-list-item-inline-divider: rgba(68,76,86,0.48);
+  --color-action-list-item-default-hover-bg: rgba(144,157,171,0.12);
+  --color-action-list-item-default-hover-border: rgba(0,0,0,0);
+  --color-action-list-item-default-active-bg: rgba(144,157,171,0.2);
+  --color-action-list-item-default-active-border: rgba(0,0,0,0);
+  --color-action-list-item-default-selected-bg: rgba(144,157,171,0.08);
+  --color-action-list-item-danger-hover-bg: rgba(229,83,75,0.16);
+  --color-action-list-item-danger-active-bg: rgba(229,83,75,0.24);
+  --color-action-list-item-danger-hover-text: #f47067;
+  --color-switch-track-bg: rgba(99,110,123,0.1);
+  --color-switch-track-hover-bg: hsla(213,11%,69%,0.1);
+  --color-switch-track-active-bg: rgba(99,110,123,0.4);
+  --color-switch-track-disabled-bg: #373e47;
+  --color-switch-track-fg: #768390;
+  --color-switch-track-disabled-fg: #1c2128;
+  --color-switch-track-border: rgba(0,0,0,0);
+  --color-switch-track-checked-bg: rgba(49,109,202,0.35);
+  --color-switch-track-checked-hover-bg: rgba(49,109,202,0.5);
+  --color-switch-track-checked-active-bg: rgba(49,109,202,0.65);
+  --color-switch-track-checked-fg: #cdd9e5;
+  --color-switch-track-checked-disabled-fg: #1c2128;
+  --color-switch-track-checked-border: rgba(0,0,0,0);
+  --color-switch-knob-bg: #22272e;
+  --color-switch-knob-border: #606771;
+  --color-switch-knob-disabled-bg: #2d333b;
+  --color-switch-knob-checked-bg: #22272e;
+  --color-switch-knob-checked-disabled-bg: #2d333b;
+  --color-switch-knob-checked-border: rgba(49,109,202,0.35);
+  --color-segmented-control-bg: rgba(99,110,123,0.1);
+  --color-segmented-control-button-bg: #22272e;
+  --color-segmented-control-button-hover-bg: #444c56;
+  --color-segmented-control-button-active-bg: #373e47;
+  --color-segmented-control-button-selected-border: #636e7b;
+  --color-tree-view-item-chevron-hover-bg: rgba(144,157,171,0.12);
+  --color-tree-view-item-directory-fill: #768390;
+  --color-fg-default: #adbac7;
+  --color-fg-muted: #768390;
+  --color-fg-subtle: #636e7b;
+  --color-fg-on-emphasis: #cdd9e5;
+  --color-canvas-default: #22272e;
+  --color-canvas-overlay: #2d333b;
+  --color-canvas-inset: #1c2128;
+  --color-canvas-subtle: #2d333b;
+  --color-border-default: #444c56;
+  --color-border-muted: #373e47;
+  --color-border-subtle: rgba(205,217,229,0.1);
+  --color-shadow-small: 0 0 transparent;
+  --color-shadow-medium: 0 3px 6px #1c2128;
+  --color-shadow-large: 0 8px 24px #1c2128;
+  --color-shadow-extra-large: 0 12px 48px #1c2128;
+  --color-neutral-emphasis-plus: #636e7b;
+  --color-neutral-emphasis: #636e7b;
+  --color-neutral-muted: rgba(99,110,123,0.4);
+  --color-neutral-subtle: rgba(99,110,123,0.1);
+  --color-accent-fg: #539bf5;
+  --color-accent-emphasis: #316dca;
+  --color-accent-muted: rgba(65,132,228,0.4);
+  --color-accent-subtle: rgba(65,132,228,0.1);
+  --color-success-fg: #57ab5a;
+  --color-success-emphasis: #347d39;
+  --color-success-muted: rgba(70,149,74,0.4);
+  --color-success-subtle: rgba(70,149,74,0.15);
+  --color-attention-fg: #c69026;
+  --color-attention-emphasis: #966600;
+  --color-attention-muted: rgba(174,124,20,0.4);
+  --color-attention-subtle: rgba(174,124,20,0.15);
+  --color-severe-fg: #cc6b2c;
+  --color-severe-emphasis: #ae5622;
+  --color-severe-muted: rgba(204,107,44,0.4);
+  --color-severe-subtle: rgba(204,107,44,0.1);
+  --color-danger-fg: #e5534b;
+  --color-danger-emphasis: #c93c37;
+  --color-danger-muted: rgba(229,83,75,0.4);
+  --color-danger-subtle: rgba(229,83,75,0.1);
+  --color-open-fg: #57ab5a;
+  --color-open-emphasis: #347d39;
+  --color-open-muted: rgba(70,149,74,0.4);
+  --color-open-subtle: rgba(70,149,74,0.15);
+  --color-closed-fg: #e5534b;
+  --color-closed-emphasis: #c93c37;
+  --color-closed-muted: rgba(229,83,75,0.4);
+  --color-closed-subtle: rgba(229,83,75,0.15);
+  --color-done-fg: #986ee2;
+  --color-done-emphasis: #8256d0;
+  --color-done-muted: rgba(152,110,226,0.4);
+  --color-done-subtle: rgba(152,110,226,0.1);
+  --color-sponsors-fg: #c96198;
+  --color-sponsors-emphasis: #ae4c82;
+  --color-sponsors-muted: rgba(201,97,152,0.4);
+  --color-sponsors-subtle: rgba(201,97,152,0.1);
+  --color-primer-fg-disabled: #545d68;
+  --color-primer-canvas-backdrop: rgba(28,33,40,0.8);
+  --color-primer-canvas-sticky: rgba(34,39,46,0.95);
+  --color-primer-border-active: #ec775c;
+  --color-primer-border-contrast: rgba(205,217,229,0.2);
+  --color-primer-shadow-highlight: 0 0 transparent;
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-scale-black: #1c2128;
+  --color-scale-white: #cdd9e5;
+  --color-scale-gray-0: #cdd9e5;
+  --color-scale-gray-1: #adbac7;
+  --color-scale-gray-2: #909dab;
+  --color-scale-gray-3: #768390;
+  --color-scale-gray-4: #636e7b;
+  --color-scale-gray-5: #545d68;
+  --color-scale-gray-6: #444c56;
+  --color-scale-gray-7: #373e47;
+  --color-scale-gray-8: #2d333b;
+  --color-scale-gray-9: #22272e;
+  --color-scale-blue-0: #c6e6ff;
+  --color-scale-blue-1: #96d0ff;
+  --color-scale-blue-2: #6cb6ff;
+  --color-scale-blue-3: #539bf5;
+  --color-scale-blue-4: #4184e4;
+  --color-scale-blue-5: #316dca;
+  --color-scale-blue-6: #255ab2;
+  --color-scale-blue-7: #1b4b91;
+  --color-scale-blue-8: #143d79;
+  --color-scale-blue-9: #0f2d5c;
+  --color-scale-green-0: #b4f1b4;
+  --color-scale-green-1: #8ddb8c;
+  --color-scale-green-2: #6bc46d;
+  --color-scale-green-3: #57ab5a;
+  --color-scale-green-4: #46954a;
+  --color-scale-green-5: #347d39;
+  --color-scale-green-6: #2b6a30;
+  --color-scale-green-7: #245829;
+  --color-scale-green-8: #1b4721;
+  --color-scale-green-9: #113417;
+  --color-scale-yellow-0: #fbe090;
+  --color-scale-yellow-1: #eac55f;
+  --color-scale-yellow-2: #daaa3f;
+  --color-scale-yellow-3: #c69026;
+  --color-scale-yellow-4: #ae7c14;
+  --color-scale-yellow-5: #966600;
+  --color-scale-yellow-6: #805400;
+  --color-scale-yellow-7: #6c4400;
+  --color-scale-yellow-8: #593600;
+  --color-scale-yellow-9: #452700;
+  --color-scale-orange-0: #ffddb0;
+  --color-scale-orange-1: #ffbc6f;
+  --color-scale-orange-2: #f69d50;
+  --color-scale-orange-3: #e0823d;
+  --color-scale-orange-4: #cc6b2c;
+  --color-scale-orange-5: #ae5622;
+  --color-scale-orange-6: #94471b;
+  --color-scale-orange-7: #7f3913;
+  --color-scale-orange-8: #682d0f;
+  --color-scale-orange-9: #4d210c;
+  --color-scale-red-0: #ffd8d3;
+  --color-scale-red-1: #ffb8b0;
+  --color-scale-red-2: #ff938a;
+  --color-scale-red-3: #f47067;
+  --color-scale-red-4: #e5534b;
+  --color-scale-red-5: #c93c37;
+  --color-scale-red-6: #ad2e2c;
+  --color-scale-red-7: #922323;
+  --color-scale-red-8: #78191b;
+  --color-scale-red-9: #5d0f12;
+  --color-scale-purple-0: #eedcff;
+  --color-scale-purple-1: #dcbdfb;
+  --color-scale-purple-2: #dcbdfb;
+  --color-scale-purple-3: #b083f0;
+  --color-scale-purple-4: #986ee2;
+  --color-scale-purple-5: #8256d0;
+  --color-scale-purple-6: #6b44bc;
+  --color-scale-purple-7: #5936a2;
+  --color-scale-purple-8: #472c82;
+  --color-scale-purple-9: #352160;
+  --color-scale-pink-0: #ffd7eb;
+  --color-scale-pink-1: #ffb3d8;
+  --color-scale-pink-2: #fc8dc7;
+  --color-scale-pink-3: #e275ad;
+  --color-scale-pink-4: #c96198;
+  --color-scale-pink-5: #ae4c82;
+  --color-scale-pink-6: #983b6e;
+  --color-scale-pink-7: #7e325a;
+  --color-scale-pink-8: #69264a;
+  --color-scale-pink-9: #551639;
+  --color-scale-coral-0: #ffdacf;
+  --color-scale-coral-1: #ffb9a5;
+  --color-scale-coral-2: #f79981;
+  --color-scale-coral-3: #ec775c;
+  --color-scale-coral-4: #de5b41;
+  --color-scale-coral-5: #c2442d;
+  --color-scale-coral-6: #a93524;
+  --color-scale-coral-7: #8d291b;
+  --color-scale-coral-8: #771d13;
+  --color-scale-coral-9: #5d1008;
+  color-scheme: dark;
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+  --color-workflow-card-connector: var(--color-scale-gray-5);
+  --color-workflow-card-connector-bg: var(--color-scale-gray-5);
+  --color-workflow-card-connector-inactive: var(--color-border-default);
+  --color-workflow-card-connector-inactive-bg: var(--color-border-default);
+  --color-workflow-card-connector-highlight: var(--color-scale-blue-5);
+  --color-workflow-card-connector-highlight-bg: var(--color-scale-blue-5);
+  --color-workflow-card-bg: var(--color-scale-gray-7);
+  --color-workflow-card-inactive-bg: var(--color-canvas-inset);
+  --color-workflow-card-header-shadow: rgba(27, 31, 35, 0.04);
+  --color-workflow-card-progress-complete-bg: var(--color-scale-blue-5);
+  --color-workflow-card-progress-incomplete-bg: var(--color-scale-gray-6);
+  --color-discussions-state-answered-icon: var(--color-scale-green-3);
+  --color-bg-discussions-row-emoji-box: var(--color-scale-gray-6);
+  --color-notifications-button-text: var(--color-scale-white);
+  --color-notifications-button-hover-text: var(--color-scale-white);
+  --color-notifications-button-hover-bg: var(--color-scale-blue-4);
+  --color-notifications-row-read-bg: var(--color-canvas-default);
+  --color-notifications-row-bg: var(--color-canvas-subtle);
+  --color-icon-directory: var(--color-fg-muted);
+  --color-checks-step-error-icon: var(--color-scale-red-4);
+  --color-calendar-halloween-graph-day-L1-bg: #631c03;
+  --color-calendar-halloween-graph-day-L2-bg: #bd561d;
+  --color-calendar-halloween-graph-day-L3-bg: #fa7a18;
+  --color-calendar-halloween-graph-day-L4-bg: #fddf68;
+  --color-calendar-winter-graph-day-L1-bg: #0A3069;
+  --color-calendar-winter-graph-day-L2-bg: #0969DA;
+  --color-calendar-winter-graph-day-L3-bg: #54AEFF;
+  --color-calendar-winter-graph-day-L4-bg: #B6E3FF;
+  --color-calendar-graph-day-bg: var(--color-scale-gray-8);
+  --color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+  --color-calendar-graph-day-L1-bg: #0e4429;
+  --color-calendar-graph-day-L2-bg: #006d32;
+  --color-calendar-graph-day-L3-bg: #26a641;
+  --color-calendar-graph-day-L4-bg: #39d353;
+  --color-calendar-graph-day-L1-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L2-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L3-border: rgba(255, 255, 255, 0.05);
+  --color-calendar-graph-day-L4-border: rgba(255, 255, 255, 0.05);
+  --color-user-mention-fg: var(--color-scale-yellow-0);
+  --color-user-mention-bg: var(--color-scale-yellow-8);
+  --color-dashboard-feed-bg: var(--color-scale-gray-9);
+  --color-mktg-btn-shadow-outline: rgba(255, 255, 255, 0.25) 0 0 0 1px inset;
+  --color-marketing-icon-primary: var(--color-scale-blue-2);
+  --color-marketing-icon-secondary: var(--color-scale-blue-5);
+  --color-project-header-bg: var(--color-scale-gray-9);
+  --color-project-sidebar-bg: var(--color-scale-gray-8);
+  --color-project-gradient-in: var(--color-scale-gray-8);
+  --color-project-gradient-out: rgba(22, 27, 34, 0);
+  --color-diff-blob-selected-line-highlight-mix-blend-mode: screen;
+  --color-checks-donut-error: var(--color-scale-red-4);
+  --color-checks-donut-pending: var(--color-scale-yellow-3);
+  --color-checks-donut-success: var(--color-scale-green-4);
+  --color-checks-donut-neutral: var(--color-scale-gray-3);
+  --color-text-white: var(--color-scale-white);
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji';
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-header-text);
+  box-sizing: border-box;
+  margin-top: calc(-1*var(--base-size-4, 4px)) !important;
+  margin-bottom: calc(-1*var(--base-size-4, 4px)) !important;
+  display: flex !important;
+  margin-right: 16px;
+  align-self: stretch;
+  align-items: center;
+  flex-wrap: nowrap;">
+    <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage " data-turbo="false"
+      data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;go to dashboard&quot;,&quot;label&quot;:&quot;icon:logo&quot;}">
+      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
+        class="octicon octicon-mark-github v-align-middle">
+        <path
+          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+        </path>
+      </svg>
+    </a>
+
+  </div>
+
+  <div class="Header-item d-md-none">
+    <button aria-label="Toggle navigation" aria-expanded="false" type="button" data-view-component="true"
+      class="Header-link js-details-target btn-link"> <svg aria-hidden="true" height="24" viewBox="0 0 16 16"
+        version="1.1" width="24" data-view-component="true" class="octicon octicon-three-bars">
+        <path
+          d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z">
+        </path>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+
+
+
+
+    <div
+      class="header-search flex-auto position-relative js-site-search flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 js-jump-to">
+      <div class="position-relative">
+        <!-- '"` --><!-- </textarea></xmp> -->
+        <form class="js-site-search-form" role="search" aria-label="Site" data-unscoped-search-url="/search"
+          data-turbo="false" action="/search" accept-charset="UTF-8" method="get">
+          <label
+            class="form-control header-search-wrapper input-sm p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+            <input type="text"
+              class="form-control js-site-search-focus header-search-input jump-to-field js-jump-to-field"
+              data-hotkey="s,/" name="q" value="github search graphql api example" placeholder="Search or jump to…"
+              data-unscoped-placeholder="Search or jump to…" data-scoped-placeholder="Search or jump to…"
+              autocapitalize="off" role="combobox" aria-haspopup="listbox" aria-expanded="false"
+              aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search or jump to…"
+              data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" spellcheck="false"
+              autocomplete="off" aria-activedescendant="jump-to-suggestion-search-global">
+            <input type="hidden"
+              value="pYM4GVliVqWOG-UI3RrvX0O_pW5sxXTHhRcuc55ARgHUxffqHY-q8TdBfr-KnpmyPfB5WNN-IIt7YfyHFoF06A"
+              data-csrf="true" class="js-data-jump-to-suggestions-path-csrf">
+            <input type="hidden" class="js-site-search-type-field" name="type">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" aria-hidden="true"
+              class="mr-1 header-search-key-slash">
+              <path fill="none" stroke="#979A9C" opacity=".4"
+                d="M3.5.5h12c1.7 0 3 1.3 3 3v13c0 1.7-1.3 3-3 3h-12c-1.7 0-3-1.3-3-3v-13c0-1.7 1.3-3 3-3z"></path>
+              <path fill="#979A9C" d="M11.8 6L8 15.1h-.9L10.8 6h1z"></path>
+            </svg>
+
+
+            <div
+              class="Box position-absolute overflow-hidden jump-to-suggestions js-jump-to-suggestions-container d-none">
+
+              <ul class="d-none js-jump-to-suggestions-template-container">
+
+
+                <li
+                  class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion"
+                  role="option">
+                  <a tabindex="-1"
+                    class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2"
+                    href="" data-item-type="suggestion">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+                      <svg title="Repository" aria-label="Repository" role="img" height="16" viewBox="0 0 16 16"
+                        version="1.1" width="16" data-view-component="true"
+                        class="octicon octicon-repo js-jump-to-octicon-repo d-none flex-shrink-0">
+                        <path
+                          d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z">
+                        </path>
+                      </svg>
+                      <svg title="Project" aria-label="Project" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-project js-jump-to-octicon-project d-none flex-shrink-0">
+                        <path
+                          d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25ZM11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3Z">
+                        </path>
+                      </svg>
+                      <svg title="Search" aria-label="Search" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-search js-jump-to-octicon-search d-none flex-shrink-0">
+                        <path
+                          d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+                        </path>
+                      </svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team"
+                      src="" width="28" height="28">
+
+                    <div
+                      class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in all of GitHub">
+                        Search
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true"
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+
+              <ul class="d-none js-jump-to-no-results-template-container">
+                <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+                  <span class="color-fg-muted">No suggested jump to results</span>
+                </li>
+              </ul>
+
+              <ul id="jump-to-results" role="listbox"
+                class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container js-active-navigation-container">
+
+
+                <li
+                  class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none"
+                  role="option" aria-selected="false">
+                  <a tabindex="-1"
+                    class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2"
+                    href="" data-item-type="scoped_search">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+                      <svg title="Repository" aria-label="Repository" role="img" height="16" viewBox="0 0 16 16"
+                        version="1.1" width="16" data-view-component="true"
+                        class="octicon octicon-repo js-jump-to-octicon-repo d-none flex-shrink-0">
+                        <path
+                          d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z">
+                        </path>
+                      </svg>
+                      <svg title="Project" aria-label="Project" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-project js-jump-to-octicon-project d-none flex-shrink-0">
+                        <path
+                          d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25ZM11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3Z">
+                        </path>
+                      </svg>
+                      <svg title="Search" aria-label="Search" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-search js-jump-to-octicon-search d-none flex-shrink-0">
+                        <path
+                          d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+                        </path>
+                      </svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team"
+                      src="" width="28" height="28">
+
+                    <div
+                      class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in all of GitHub">
+                        Search
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true"
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+
+
+
+                <li
+                  class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-owner-scoped-search d-none"
+                  role="option" aria-selected="false">
+                  <a tabindex="-1"
+                    class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2"
+                    href="" data-item-type="owner_scoped_search">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+                      <svg title="Repository" aria-label="Repository" role="img" height="16" viewBox="0 0 16 16"
+                        version="1.1" width="16" data-view-component="true"
+                        class="octicon octicon-repo js-jump-to-octicon-repo d-none flex-shrink-0">
+                        <path
+                          d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z">
+                        </path>
+                      </svg>
+                      <svg title="Project" aria-label="Project" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-project js-jump-to-octicon-project d-none flex-shrink-0">
+                        <path
+                          d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25ZM11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3Z">
+                        </path>
+                      </svg>
+                      <svg title="Search" aria-label="Search" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-search js-jump-to-octicon-search d-none flex-shrink-0">
+                        <path
+                          d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+                        </path>
+                      </svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team"
+                      src="" width="28" height="28">
+
+                    <div
+                      class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in all of GitHub">
+                        Search
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true"
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+
+
+
+                <li
+                  class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search navigation-focus"
+                  role="option" id="jump-to-suggestion-search-global" aria-selected="true">
+                  <a tabindex="-1"
+                    class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2"
+                    href="https://github.com/search?q=github+search+graphql+api+example" data-item-type="global_search"
+                    data-target-type="Search">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center">
+                      <svg title="Repository" aria-label="Repository" role="img" height="16" viewBox="0 0 16 16"
+                        version="1.1" width="16" data-view-component="true"
+                        class="octicon octicon-repo js-jump-to-octicon-repo d-none flex-shrink-0">
+                        <path
+                          d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z">
+                        </path>
+                      </svg>
+                      <svg title="Project" aria-label="Project" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-project js-jump-to-octicon-project d-none flex-shrink-0">
+                        <path
+                          d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25ZM11.75 3a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-1.5 0v-7.5a.75.75 0 0 1 .75-.75Zm-8.25.75a.75.75 0 0 1 1.5 0v5.5a.75.75 0 0 1-1.5 0ZM8 3a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 3Z">
+                        </path>
+                      </svg>
+                      <svg title="Search" aria-label="Search" role="img" height="16" viewBox="0 0 16 16" version="1.1"
+                        width="16" data-view-component="true"
+                        class="octicon octicon-search js-jump-to-octicon-search flex-shrink-0">
+                        <path
+                          d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+                        </path>
+                      </svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team"
+                      src="" width="28" height="28">
+
+                    <div
+                      class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target"
+                      aria-label="github search graphql api example">github search graphql api example</div>
+
+                    <div
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in all of GitHub">
+                        Search
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true"
+                      class="border rounded-2 flex-shrink-0 color-bg-subtle px-1 color-fg-muted ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+
+
+
+              </ul>
+
+            </div>
+          </label>
+        </form>
+      </div>
+    </div>
+
+    <nav id="global-nav" class="d-flex flex-column flex-md-row flex-self-stretch flex-md-self-auto" aria-label="Global">
+      <a class="Header-link py-md-3 d-block d-md-none py-2 border-top border-md-top-0 border-white-fade"
+        data-ga-click="Header, click, Nav menu - item:dashboard:user" aria-label="Dashboard" data-turbo="false"
+        href="/dashboard">Dashboard</a>
+
+      <a class="js-selected-navigation-item Header-link mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade"
+        data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user"
+        aria-label="Pull requests you created" data-turbo="false"
+        data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+        Pull<span class="d-inline d-md-none d-lg-inline"> request</span>s
+      </a>
+      <a class="js-selected-navigation-item Header-link mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade"
+        data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user"
+        aria-label="Issues you created" data-turbo="false"
+        data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">Issues</a>
+
+      <a class="js-selected-navigation-item Header-link mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade"
+        data-ga-click="Header, click, Nav menu - item:workspaces context:user" data-turbo="false"
+        data-selected-links="/codespaces /codespaces" href="/codespaces">Codespaces</a>
+
+      <div class="d-flex position-relative">
+        <a class="js-selected-navigation-item Header-link flex-auto mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade"
+          data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click"
+          data-octo-dimensions="location:nav_bar" data-turbo="false" data-selected-links=" /marketplace"
+          href="/marketplace">Marketplace</a>
+      </div>
+
+      <a class="js-selected-navigation-item Header-link mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade"
+        data-ga-click="Header, click, Nav menu - item:explore" data-turbo="false"
+        data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore"
+        href="/explore">Explore</a>
+
+      <a class="js-selected-navigation-item Header-link d-block d-md-none py-2 py-md-3 border-top border-md-top-0 border-white-fade"
+        data-ga-click="Header, click, Nav menu - item:Sponsors"
+        data-hydro-click="{&quot;event_type&quot;:&quot;sponsors.button_click&quot;,&quot;payload&quot;:{&quot;button&quot;:&quot;HEADER_SPONSORS_DASHBOARD&quot;,&quot;sponsorable_login&quot;:&quot;miraymond&quot;,&quot;originating_url&quot;:&quot;https://github.com/search?q=github+search+graphql+api+example&quot;,&quot;user_id&quot;:58475411}}"
+        data-hydro-click-hmac="2cd88f67df56fdea102e3307404b6c80d04bbfe58c603f4623eba3801a5a84e6" data-turbo="false"
+        data-selected-links=" /sponsors/accounts" href="/sponsors/accounts">Sponsors</a>
+
+      <a class="Header-link d-block d-md-none mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade"
+        data-turbo="false" href="/settings/profile">Settings</a>
+
+      <a class="Header-link d-block d-md-none mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade"
+        data-turbo="false" href="/miraymond">
+        <img class="avatar avatar-user" loading="lazy" decoding="async"
+          src="https://avatars.githubusercontent.com/u/58475411?s=40&amp;v=4" width="20" height="20" alt="@miraymond">
+        miraymond
+      </a>
+      <!-- '"` --><!-- </textarea></xmp> -->
+      <form data-turbo="false" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden"
+          name="authenticity_token"
+          value="9bgPFdKByPBIKrKtckCltffbY243KQ3cOYxonXVkQ7IHHTfalxR9__j22qylZ7PZsBiNDS9HgHY5EykO_B-h5Q">
+        <button type="submit"
+          class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade d-md-none btn-link d-block width-full text-left"
+          style="padding-left: 2px;"
+          data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;sign out&quot;,&quot;label&quot;:&quot;icon:logout&quot;}">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+            class="octicon octicon-sign-out v-align-middle">
+            <path
+              d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm10.44 4.5-1.97-1.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.97-1.97H6.75a.75.75 0 0 1 0-1.5Z">
+            </path>
+          </svg>
+          Sign out
+        </button>
+      </form>
+    </nav>
+
+  </div>
+
+  <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+    <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage " data-turbo="false"
+      data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;go to dashboard&quot;,&quot;label&quot;:&quot;icon:logo&quot;}">
+      <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
+        class="octicon octicon-mark-github v-align-middle">
+        <path
+          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+        </path>
+      </svg>
+    </a>
+
+  </div>
+
+  <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
+
+
+    <notification-indicator
+      data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NTg0NzU0MTEiLCJ0IjoxNjgyMDEyNDM4fQ==--514a5fe482a4c1a2e3e4eeed3d732fb980b901e51f75a790bdac22587d350ad0"
+      data-indicator-mode="none" data-tooltip-global="You have unread notifications"
+      data-tooltip-unavailable="Notifications are unavailable at the moment."
+      data-tooltip-none="You have no unread notifications" data-fetch-indicator-src="/notifications/indicator"
+      data-fetch-indicator-enabled="true" data-view-component="true" class="js-socket-channel"
+      data-fetch-retry-delay-time="500" data-catalyst="">
+      <a id="AppHeader-notifications-button" href="/notifications"
+        class="Header-link notification-indicator position-relative tooltipped tooltipped-sw" data-hotkey="g n"
+        data-target="notification-indicator.link" aria-label="You have no unread notifications"
+        data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;go to notifications&quot;,&quot;label&quot;:&quot;icon:read&quot;}">
+
+        <span data-target="notification-indicator.badge" class="mail-status unread" hidden="">
+        </span>
+
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+          class="octicon octicon-bell">
+          <path
+            d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z">
+          </path>
+        </svg>
+      </a>
+
+    </notification-indicator>
+  </div>
+
+
+  <div class="Header-item position-relative d-none d-md-flex">
+    <details class="details-overlay details-reset">
+      <summary class="Header-link" aria-label="Create new…"
+        data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;create new&quot;,&quot;label&quot;:&quot;icon:add&quot;}"
+        aria-haspopup="menu" role="button">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+          class="octicon octicon-plus">
+          <path
+            d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z">
+          </path>
+        </svg> <span class="dropdown-caret"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
+
+        <a role="menuitem" class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+          New repository
+        </a>
+
+        <a role="menuitem" class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+          Import repository
+        </a>
+
+        <a role="menuitem" class="dropdown-item" href="/codespaces/new">
+          New codespace
+        </a>
+
+        <a role="menuitem" class="dropdown-item" href="https://gist.github.com/"
+          data-ga-click="Header, create new gist">
+          New gist
+        </a>
+
+        <a role="menuitem" class="dropdown-item" href="/organizations/new"
+          data-ga-click="Header, create new organization">
+          New organization
+        </a>
+
+
+        <!-- '"` --><!-- </textarea></xmp> -->
+        <form data-turbo="false" action="/users/miraymond/projects?type=new" accept-charset="UTF-8" method="post"><input
+            type="hidden" name="authenticity_token"
+            value="BeST00gy7ww5169iVIxTV14zOkw8e18juEunFHz8Xg-JZauqdlroTSgoE-3k7PI7lZOm3yHBELhdvde3t5iwXg">
+          <input type="hidden" name="action" id="action" value="create" autocomplete="off" class="form-control">
+          <input id="project-title" value="@miraymond's untitled project" autocomplete="off" type="hidden"
+            name="memex_project[title]">
+          <button role="menuitem" data-ga-click="Header, create new project" type="submit" data-view-component="true"
+            class="dropdown-item btn-link"> New project
+          </button>
+        </form>
+      </details-menu>
+    </details>
+
+  </div>
+
+  <div class="Header-item position-relative mr-0 d-none d-md-flex">
+
+    <details class="details-overlay details-reset js-feature-preview-indicator-container"
+      data-feature-preview-indicator-src="/users/miraymond/feature_preview/indicator_check">
+
+      <summary class="Header-link" aria-label="View profile and more"
+        data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;show menu&quot;,&quot;label&quot;:&quot;icon:avatar&quot;}"
+        aria-haspopup="menu" role="button">
+        <img src="https://avatars.githubusercontent.com/u/58475411?s=40&amp;v=4" alt="@miraymond" size="20" height="20"
+          width="20" data-view-component="true" class="avatar avatar-small circle">
+        <span class="unread-indicator js-feature-preview-indicator" style="top: 1px;" hidden=""></span>
+        <span class="dropdown-caret"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw" style="width: 180px" preload="" role="menu">
+        <div class="header-nav-current-user css-truncate"><a role="menuitem"
+            class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="/miraymond"
+            data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong
+              class="css-truncate-target">miraymond</strong></a></div>
+        <div role="none" class="dropdown-divider"></div>
+
+        <div class="pl-3 pr-3 f6 user-status-container js-user-status-context lh-condensed"
+          data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
+
+          <div class="js-user-status-container rounded-2 px-2 py-1 mt-2 border" data-team-hovercards-enabled="">
+            <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
+              <summary
+                class="btn-link btn-block Link--secondary no-underline js-toggle-user-status-edit toggle-user-status-edit"
+                role="menuitem">
+                <div class="d-flex flex-items-center flex-items-stretch">
+                  <div class="f6 lh-condensed user-status-header d-flex user-status-emoji-only-header circle">
+                    <div
+                      class="user-status-emoji-container flex-shrink-0 mr-2 d-flex flex-items-center flex-justify-center lh-condensed-ultra v-align-bottom">
+                      <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                        aria-hidden="true">
+                        <path
+                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm3.82 1.636a.75.75 0 0 1 1.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 0 1 1.222.87l-.022-.015c.02.013.021.015.021.015v.001l-.001.002-.002.003-.005.007-.014.019a2.066 2.066 0 0 1-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.331 3.331 0 0 1-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 0 1 .183-1.044ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM5 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5.25 2.25.592.416a97.71 97.71 0 0 0-.592-.416Z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="
+        
+         user-status-message-wrapper f6 min-width-0" style="line-height: 20px;">
+                    <div class="css-truncate css-truncate-target width-fit color-fg-default text-left">
+                      <span class="color-fg-muted">Set status</span>
+                    </div>
+                  </div>
+                </div>
+              </summary>
+              <details-dialog class="rounded-2 anim-fade-in fast Box Box--overlay overflow-visible" role="dialog"
+                aria-label="Edit status" tabindex="-1" aria-modal="true">
+
+                <!-- '"` --><!-- </textarea></xmp> -->
+                <form class="position-relative flex-auto js-user-status-form" data-turbo="false"
+                  action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1"
+                  accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"
+                    autocomplete="off"><input type="hidden" name="authenticity_token"
+                    value="MfL4SjK5igKrOwPkxKz3-TjfqRquhvOaE7m5nO7vRYLKfsNvuwK40ZvwnHKE6bE75kKSmkXLZWw-8Aagl-EGXQ">
+                  <div class="Box-header color-bg-subtle border-bottom p-3">
+                    <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset"
+                      aria-label="Close dialog" data-close-dialog="">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="octicon octicon-x">
+                        <path
+                          d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z">
+                        </path>
+                      </svg>
+                    </button>
+                    <h3 class="Box-title f5 text-bold color-fg-default">Edit status</h3>
+                  </div>
+                  <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
+                  <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
+                  <div class="px-3 py-2 color-fg-default">
+                    <div class="js-characters-remaining-container position-relative mt-2">
+                      <div class="input-group d-table form-group my-0 js-user-status-form-group">
+                        <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
+                          <button aria-label="Choose an emoji" style="height: 32px; width: 46px;" type="button"
+                            data-view-component="true" class="js-toggle-user-status-emoji-picker btn-outline btn p-0">
+                            <span class="js-user-status-original-emoji" hidden=""></span>
+                            <span class="js-user-status-custom-emoji"></span>
+                            <span class="js-user-status-no-emoji-icon">
+                              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                                data-view-component="true" class="octicon octicon-smiley">
+                                <path
+                                  d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm3.82 1.636a.75.75 0 0 1 1.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 0 1 1.222.87l-.022-.015c.02.013.021.015.021.015v.001l-.001.002-.002.003-.005.007-.014.019a2.066 2.066 0 0 1-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.331 3.331 0 0 1-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 0 1 .183-1.044ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM5 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5.25 2.25.592.416a97.71 97.71 0 0 0-.592-.416Z">
+                                </path>
+                              </svg>
+                            </span>
+                          </button> </span>
+                        <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions"
+                          data-emoji-url="/autocomplete/emoji">
+                          <input type="text" autocomplete="off" data-no-org-url="/autocomplete/user-suggestions"
+                            data-org-url="/suggestions?mention_suggester=1" data-maxlength="80"
+                            class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field"
+                            placeholder="What's happening?" name="message" value=""
+                            aria-label="What is your current status?">
+                        </text-expander>
+                        <div class="error">Could not update your status, please try again.</div>
+                      </div>
+                      <div style="margin-left: 53px"
+                        class="my-1 text-small label-characters-remaining js-characters-remaining"
+                        data-suffix="remaining" hidden="">
+                        80 remaining
+                      </div>
+                    </div>
+                    <include-fragment loading="lazy" src="/users/status/emoji"></include-fragment>
+                    <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
+                      <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
+                        <h4 class="f6 text-normal my-3">Suggestions:</h4>
+                        <div class="mx-3 mt-2 clearfix">
+                          <div class="float-left col-6">
+                            <button type="button" value=":palm_tree:"
+                              class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link Link--secondary no-underline js-predefined-user-status mb-1">
+                              <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                                <g-emoji alias="palm_tree"
+                                  fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
+                              </div>
+                              <div
+                                class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left"
+                                style="border-left: 1px solid transparent">
+                                On vacation
+                              </div>
+                            </button>
+                            <button type="button" value=":face_with_thermometer:"
+                              class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link Link--secondary no-underline js-predefined-user-status mb-1">
+                              <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                                <g-emoji alias="face_with_thermometer"
+                                  fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
+                              </div>
+                              <div
+                                class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left"
+                                style="border-left: 1px solid transparent">
+                                Out sick
+                              </div>
+                            </button>
+                          </div>
+                          <div class="float-left col-6">
+                            <button type="button" value=":house:"
+                              class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link Link--secondary no-underline js-predefined-user-status mb-1">
+                              <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                                <g-emoji alias="house"
+                                  fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
+                              </div>
+                              <div
+                                class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left"
+                                style="border-left: 1px solid transparent">
+                                Working from home
+                              </div>
+                            </button>
+                            <button type="button" value=":dart:"
+                              class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link Link--secondary no-underline js-predefined-user-status mb-1">
+                              <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                                <g-emoji alias="dart"
+                                  fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
+                              </div>
+                              <div
+                                class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left"
+                                style="border-left: 1px solid transparent">
+                                Focusing
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="user-status-limited-availability-container">
+                        <div class="form-checkbox my-0">
+                          <input type="checkbox" name="limited_availability" value="1"
+                            class="js-user-status-limited-availability-checkbox"
+                            data-default-message="I may be slow to respond."
+                            aria-describedby="limited-availability-help-text-truncate-true-compact-true"
+                            id="limited-availability-truncate-true-compact-true">
+                          <label class="d-block f5 color-fg-default mb-1"
+                            for="limited-availability-truncate-true-compact-true">
+                            Busy
+                          </label>
+                          <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
+                            When others mention you, assign you, or request your review,
+                            GitHub will let them know that you have limited availability.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-inline-block f5 mr-2 pt-3 pb-2">
+                      <div class="d-inline-block mr-1">
+                        Clear status
+                      </div>
+
+                      <details
+                        class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
+                        <summary aria-haspopup="true" data-view-component="true" class="btn-sm btn v-align-baseline">
+                          <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
+                            Never
+                          </div>
+                          <div class="dropdown-caret"></div>
+                        </summary>
+                        <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto"
+                          style="width: 220px; max-height: 15.5em">
+                          <li>
+                            <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal"
+                              title="Never">
+                              <span class="d-inline-block text-bold mb-1">Never</span>
+                              <div class="f6 lh-condensed">Keep this status until you clear your status or edit your
+                                status.</div>
+                            </button>
+                          </li>
+                          <li class="dropdown-divider" role="none"></li>
+                          <li>
+                            <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button"
+                              title="in 30 minutes" value="2023-04-20T14:23:37-04:00">
+                              in 30 minutes
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button"
+                              title="in 1 hour" value="2023-04-20T14:53:37-04:00">
+                              in 1 hour
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button"
+                              title="in 4 hours" value="2023-04-20T17:53:37-04:00">
+                              in 4 hours
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button"
+                              title="today" value="2023-04-20T23:59:59-04:00">
+                              today
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button"
+                              title="this week" value="2023-04-23T23:59:59-04:00">
+                              this week
+                            </button>
+                          </li>
+                        </ul>
+                      </details>
+                      <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
+                    </div>
+
+                    <include-fragment loading="lazy" src="/users/status/organizations"></include-fragment>
+                  </div>
+                  <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
+                    <button type="submit" disabled="" class="width-full btn btn-primary mr-2 js-user-status-submit">
+                      Set status
+                    </button>
+                    <button type="button" disabled="" class="width-full js-clear-user-status-button btn ml-2 ">
+                      Clear status
+                    </button>
+                  </div>
+                </form>
+              </details-dialog>
+            </details>
+          </div>
+
+        </div>
+        <div role="none" class="dropdown-divider"></div>
+
+        <a role="menuitem" class="dropdown-item" href="/miraymond"
+          data-ga-click="Header, go to profile, text:your profile"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;YOUR_PROFILE&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="e1dafa995c47a4863a7f6950b5523544acce1ef5e3c5a18127405564dcae4158">Your profile</a>
+
+        <a role="menuitem" class="dropdown-item" href="/miraymond?tab=repositories"
+          data-ga-click="Header, go to repositories, text:your repositories"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;YOUR_REPOSITORIES&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="e12fff78c8af3746a876e30212a6bf527a2d1f49766de4bc95fba0bb80833b17">Your repositories</a>
+
+
+
+
+        <a role="menuitem" class="dropdown-item" href="/miraymond?tab=projects"
+          data-ga-click="Header, go to projects, text:your projects"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;YOUR_PROJECTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="c545c0ebeddd50cc40a005d385efdaa91717ba56e94977dda561162b7e19a75d">Your projects</a>
+
+
+        <a role="menuitem" class="dropdown-item" href="/miraymond?tab=stars"
+          data-ga-click="Header, go to starred repos, text:your stars"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;YOUR_STARS&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="96b5df2e0b04e974b7eb324e947282e29d9bc79a5d296b3a45fa9a8dd36e3a03">Your stars</a>
+        <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine"
+          data-ga-click="Header, your gists, text:your gists"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;YOUR_GISTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="49a42bb312c0c0fd7cb84e76cbc7cd9e4cb882f5815227c4fbefcd7383e39451">Your gists</a>
+
+        <a role="menuitem" class="dropdown-item"
+          data-ga-click="Header, go to GitHub Sponsors accounts page, text:your sponsors"
+          data-hydro-click="{&quot;event_type&quot;:&quot;sponsors.button_click&quot;,&quot;payload&quot;:{&quot;button&quot;:&quot;HEADER_SPONSORS_DASHBOARD&quot;,&quot;sponsorable_login&quot;:&quot;miraymond&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="429b93ed1cb7ed7211d74be018a88b53fd1224ea7eb4f92d806a14e5c2a144c3"
+          href="/sponsors/accounts">Your sponsors</a>
+
+
+        <div role="none" class="dropdown-divider"></div>
+        <a role="menuitem" class="dropdown-item" href="/account/choose?action=upgrade"
+          data-ga-click="Header, go to compare plans, text:upgrade"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;UPGRADE&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="3fbafd467d748acb698d5cecbdc69f36a9c2c558c4d6e99d694a1fca2e3efc61">Upgrade</a>
+        <a role="menuitem" class="dropdown-item"
+          href="/organizations/enterprise_plan?ref_cta=Try%2520Enterprise&amp;ref_loc=user_drawer_side_panel&amp;ref_page=Header+Avatar"
+          data-analytics-event="{&quot;category&quot;:&quot;start_a_trial&quot;,&quot;action&quot;:&quot;click_to_set_up_enterprise_trial&quot;,&quot;label&quot;:&quot;ref_loc:side_panel;ref_cta:start_a_trial&quot;}">Try
+          Enterprise</a>
+
+        <div id="feature-enrollment-toggle" class="hide-sm hide-md unread-indicator-container position-relative">
+          <button type="button" class="dropdown-item btn-link" role="menuitem"
+            data-feature-preview-trigger-url="/users/miraymond/feature_previews"
+            data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+            data-feature-preview-close-hmac="8190cf8c8b746395ac10373cbd58a6db10c5f35ce8746b7b660eea8f4cd6c923"
+            data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+            data-hydro-click-hmac="43ab937a683b98c88b9819b13f54afb4c265543767e8a2338b8aaea73ad50bad">
+            Feature preview
+          </button>
+          <span class="unread-indicator js-feature-preview-indicator" hidden=""></span>
+        </div>
+
+        <a role="menuitem" class="dropdown-item" href="https://docs.github.com"
+          data-ga-click="Header, go to help, text:help"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;HELP&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="bed612f6ef86adac3cf8cff794b2c2855659974d4b54284ba1f4e94337695a8b">Help</a>
+        <a role="menuitem" class="dropdown-item" href="/settings/profile"
+          data-ga-click="Header, go to settings, icon:settings"
+          data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;SETTINGS&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+          data-hydro-click-hmac="c6b1c1a95e113874eb55c51a6e925fb3ca19717f5fb94483f70ff399ce3ae028">Settings</a>
+        <div role="none" class="dropdown-divider"></div>
+        <!-- '"` --><!-- </textarea></xmp> -->
+        <form class="logout-form js-loggout-form" data-turbo="false" action="/logout" accept-charset="UTF-8"
+          method="post"><input type="hidden" name="authenticity_token"
+            value="4p61L8ParZlMRAmaN1PAdDXBT2wzEKYWxjttach4QywQO43ghk8YlvyYYZvgdNYYcgKhDyt-K7zGpCz6QQOhew">
+
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout"
+            data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;target&quot;:&quot;SIGN_OUT&quot;,&quot;originating_url&quot;:&quot;https://github.com/users/58475411/menu&quot;,&quot;user_id&quot;:58475411}}"
+            data-hydro-click-hmac="7ad12d96f0c10e9d6a101bcaea47c8ccc4e66cd1c59c43264d94ddb2cd0e87b4" role="menuitem">
+            Sign out
+          </button>
+          <input type="text" name="required_field_cc42" hidden="hidden" class="form-control"><input type="hidden"
+            name="timestamp" value="1682013217206" autocomplete="off" class="form-control"><input type="hidden"
+            name="timestamp_secret" value="744b66188d2d43a27e7423ab35d76de5829dd7349ba8ea16e07a46b2c58fcd17"
+            autocomplete="off" class="form-control">
+        </form>
+      </details-menu>
+    </details>
+
+  </div>
+</header>
